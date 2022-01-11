@@ -1,183 +1,1682 @@
+<html>
+  <head> 
+    <style> 
+      body {
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+        font-size: 16px;
+        color: #2c3e50;
+      }
+      
+      .page {
+        padding-left: 0;
+        padding-bottom: 2rem;
+        display: block;
+      }
+      code[class*=language-],
+pre[class*=language-] {
+ color:#ccc;
+ background:none;
+ font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+ font-size:1em;
+ text-align:left;
+ white-space:pre;
+ word-spacing:normal;
+ word-break:normal;
+ word-wrap:normal;
+ line-height:1.5;
+ -moz-tab-size:4;
+ -o-tab-size:4;
+ tab-size:4;
+ -webkit-hyphens:none;
+ -ms-hyphens:none;
+ hyphens:none
+}
+pre[class*=language-] {
+ padding:1em;
+ margin:.5em 0;
+ overflow:auto
+}
+:not(pre)>code[class*=language-],
+pre[class*=language-] {
+ background:#2d2d2d
+}
+:not(pre)>code[class*=language-] {
+ padding:.1em;
+ border-radius:.3em;
+ white-space:normal
+}
+.token.block-comment,
+.token.cdata,
+.token.comment,
+.token.doctype,
+.token.prolog {
+ color:#999
+}
+.token.punctuation {
+ color:#ccc
+}
+.token.attr-name,
+.token.deleted,
+.token.namespace,
+.token.tag {
+ color:#e2777a
+}
+.token.function-name {
+ color:#6196cc
+}
+.token.boolean,
+.token.function,
+.token.number {
+ color:#f08d49
+}
+.token.class-name,
+.token.constant,
+.token.property,
+.token.symbol {
+ color:#f8c555
+}
+.token.atrule,
+.token.builtin,
+.token.important,
+.token.keyword,
+.token.selector {
+ color:#cc99cd
+}
+.token.attr-value,
+.token.char,
+.token.regex,
+.token.string,
+.token.variable {
+ color:#7ec699
+}
+.token.entity,
+.token.operator,
+.token.url {
+ color:#67cdcc
+}
+.token.bold,
+.token.important {
+ font-weight:700
+}
+.token.italic {
+ font-style:italic
+}
+.token.entity {
+ cursor:help
+}
+.token.inserted {
+ color:green
+}
+.theme-default-content code {
+ color:#476582;
+ padding:.25rem .5rem;
+ margin:0;
+ font-size:.85em;
+ background-color:rgba(27,31,35,.05);
+ border-radius:3px
+}
+.theme-default-content code .token.deleted {
+ color:#ec5975
+}
+.theme-default-content code .token.inserted {
+ color:#1768ac
+}
+.theme-default-content pre,
+.theme-default-content pre[class*=language-] {
+ line-height:1.4;
+ padding:1.25rem 1.5rem;
+ margin:.85rem 0;
+ background-color:#f3f5f7;
+ border-radius:6px;
+ overflow:auto
+}
+.theme-default-content pre[class*=language-] code,
+.theme-default-content pre code {
+ color:#fff;
+ padding:0;
+ background-color:transparent;
+ border-radius:0
+}
+div[class*=language-] {
+ position:relative;
+ background-color:#f3f5f7;
+ border-radius:6px
+}
+div[class*=language-] .highlight-lines {
+ -webkit-user-select:none;
+ -ms-user-select:none;
+ user-select:none;
+ padding-top:1.3rem;
+ position:absolute;
+ top:0;
+ left:0;
+ width:100%;
+ line-height:1.4
+}
+div[class*=language-] .highlight-lines .highlighted {
+ background-color:rgba(0,0,0,.66)
+}
+div[class*=language-] pre,
+div[class*=language-] pre[class*=language-] {
+ background:transparent;
+ position:relative;
+ z-index:1
+}
+div[class*=language-]:before {
+ position:absolute;
+ z-index:3;
+ top:.8em;
+ right:1em;
+ font-size:.75rem;
+ color:hsla(0,0%,100%,.4)
+}
+div[class*=language-]:not(.line-numbers-mode) .line-numbers-wrapper {
+ display:none
+}
+div[class*=language-].line-numbers-mode .highlight-lines .highlighted {
+ position:relative
+}
+div[class*=language-].line-numbers-mode .highlight-lines .highlighted:before {
+ content:" ";
+ position:absolute;
+ z-index:3;
+ left:0;
+ top:0;
+ display:block;
+ width:3.5rem;
+ height:100%;
+ background-color:rgba(0,0,0,.66)
+}
+div[class*=language-].line-numbers-mode pre {
+ padding-left:4.5rem;
+ vertical-align:middle
+}
+div[class*=language-].line-numbers-mode .line-numbers-wrapper {
+ position:absolute;
+ top:0;
+ width:3.5rem;
+ text-align:center;
+ color:hsla(0,0%,100%,.3);
+ padding:1.25rem 0;
+ line-height:1.4
+}
+div[class*=language-].line-numbers-mode .line-numbers-wrapper br {
+ -webkit-user-select:none;
+ -ms-user-select:none;
+ user-select:none
+}
+div[class*=language-].line-numbers-mode .line-numbers-wrapper .line-number {
+ position:relative;
+ z-index:4;
+ -webkit-user-select:none;
+ -ms-user-select:none;
+ user-select:none;
+ font-size:.85em
+}
+div[class*=language-].line-numbers-mode:after {
+ content:"";
+ position:absolute;
+ z-index:2;
+ top:0;
+ left:0;
+ width:3.5rem;
+ height:100%;
+ border-radius:6px 0 0 6px;
+ border-right:1px solid rgba(0,0,0,.66);
+ background-color:#f3f5f7
+}
+div[class~=language-js]:before {
+ content:"js"
+}
+div[class~=language-ts]:before {
+ content:"ts"
+}
+div[class~=language-html]:before {
+ content:"html"
+}
+div[class~=language-md]:before {
+ content:"md"
+}
+div[class~=language-vue]:before {
+ content:"vue"
+}
+div[class~=language-css]:before {
+ content:"css"
+}
+div[class~=language-sass]:before {
+ content:"sass"
+}
+div[class~=language-scss]:before {
+ content:"scss"
+}
+div[class~=language-less]:before {
+ content:"less"
+}
+div[class~=language-stylus]:before {
+ content:"stylus"
+}
+div[class~=language-go]:before {
+ content:"go"
+}
+div[class~=language-java]:before {
+ content:"java"
+}
+div[class~=language-c]:before {
+ content:"c"
+}
+div[class~=language-sh]:before {
+ content:"sh"
+}
+div[class~=language-yaml]:before {
+ content:"yaml"
+}
+div[class~=language-py]:before {
+ content:"py"
+}
+div[class~=language-docker]:before {
+ content:"docker"
+}
+div[class~=language-dockerfile]:before {
+ content:"dockerfile"
+}
+div[class~=language-makefile]:before {
+ content:"makefile"
+}
+div[class~=language-javascript]:before {
+ content:"js"
+}
+div[class~=language-typescript]:before {
+ content:"ts"
+}
+div[class~=language-markup]:before {
+ content:"html"
+}
+div[class~=language-markdown]:before {
+ content:"md"
+}
+div[class~=language-json]:before {
+ content:"json"
+}
+div[class~=language-ruby]:before {
+ content:"rb"
+}
+div[class~=language-python]:before {
+ content:"py"
+}
+div[class~=language-bash]:before {
+ content:"sh"
+}
+div[class~=language-php]:before {
+ content:"php"
+}
+.custom-block .custom-block-title {
+ font-weight:600;
+ margin-bottom:-.4rem
+}
+.custom-block.danger,
+.custom-block.tip,
+.custom-block.warning {
+ padding:.1rem 1.5rem;
+ border-left-width:.5rem;
+ border-left-style:solid;
+ margin:1rem 0
+}
+.custom-block.tip {
+ background-color:#f3f5f7;
+ border-color:#42b983
+}
+.custom-block.warning {
+ background-color:rgba(255,229,100,.3);
+ border-color:#e7c000;
+ color:#6b5900
+}
+.custom-block.warning .custom-block-title {
+ color:#b29400
+}
+.custom-block.warning a {
+ color:#2c3e50
+}
+.custom-block.danger {
+ background-color:#ffe6e6;
+ border-color:#c00;
+ color:#4d0000
+}
+.custom-block.danger .custom-block-title {
+ color:#900
+}
+.custom-block.danger a {
+ color:#2c3e50
+}
+.custom-block.details {
+ display:block;
+ position:relative;
+ border-radius:2px;
+ margin:1.6em 0;
+ padding:1.6em;
+ background-color:#eee
+}
+.custom-block.details h4 {
+ margin-top:0
+}
+.custom-block.details figure:last-child,
+.custom-block.details p:last-child {
+ margin-bottom:0;
+ padding-bottom:0
+}
+.custom-block.details summary {
+ outline:none;
+ cursor:pointer
+}
+.arrow {
+ display:inline-block;
+ width:0;
+ height:0
+}
+.arrow.up {
+ border-bottom:6px solid #ccc
+}
+.arrow.down,
+.arrow.up {
+ border-left:4px solid transparent;
+ border-right:4px solid transparent
+}
+.arrow.down {
+ border-top:6px solid #ccc
+}
+.arrow.right {
+ border-left:6px solid #ccc
+}
+.arrow.left,
+.arrow.right {
+ border-top:4px solid transparent;
+ border-bottom:4px solid transparent
+}
+.arrow.left {
+ border-right:6px solid #ccc
+}
+.theme-default-content:not(.custom) {
+ max-width:740px;
+ margin:0 auto;
+ padding:2rem 2.5rem
+}
+@media (max-width:959px) {
+ .theme-default-content:not(.custom) {
+  padding:2rem
+ }
+}
+@media (max-width:419px) {
+ .theme-default-content:not(.custom) {
+  padding:1.5rem
+ }
+}
+.table-of-contents .badge {
+ vertical-align:middle
+}
+body,
+html {
+ padding:0;
+ margin:0;
+ background-color:#fff
+}
+body {
+ font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+ -webkit-font-smoothing:antialiased;
+ -moz-osx-font-smoothing:grayscale;
+ font-size:16px;
+ color:#2c3e50
+}
+.page {
+ padding-left:20rem
+}
+.navbar {
+ z-index:20;
+ right:0;
+ height:3.6rem;
+ background-color:#fff;
+ box-sizing:border-box;
+ border-bottom:1px solid #eaecef
+}
+.navbar,
+.sidebar-mask {
+ position:fixed;
+ top:0;
+ left:0
+}
+.sidebar-mask {
+ z-index:9;
+ width:100vw;
+ height:100vh;
+ display:none
+}
+.sidebar {
+ font-size:16px;
+ background-color:#fff;
+ width:20rem;
+ position:fixed;
+ z-index:10;
+ margin:0;
+ top:3.6rem;
+ left:0;
+ bottom:0;
+ box-sizing:border-box;
+ border-right:1px solid #eaecef;
+ overflow-y:auto
+}
+.theme-default-content:not(.custom)>:first-child {
+ margin-top:3.6rem
+}
+.theme-default-content:not(.custom) a:hover {
+ text-decoration:underline
+}
+.theme-default-content:not(.custom) p.demo {
+ padding:1rem 1.5rem;
+ border:1px solid #ddd;
+ border-radius:4px
+}
+.theme-default-content:not(.custom) img {
+ max-width:100%
+}
+.theme-default-content.custom {
+ padding:0;
+ margin:0
+}
+.theme-default-content.custom img {
+ max-width:100%
+}
+a {
+ font-weight:500;
+ text-decoration:none
+}
+a,
+p a code {
+ color:#1768ac
+}
+p a code {
+ font-weight:400
+}
+kbd {
+ background:#eee;
+ border:.15rem solid #ddd;
+ border-bottom:.25rem solid #ddd;
+ border-radius:.15rem;
+ padding:0 .15em
+}
+blockquote {
+ font-size:1rem;
+ color:#999;
+ border-left:.2rem solid #dfe2e5;
+ margin:1rem 0;
+ padding:.25rem 0 .25rem 1rem
+}
+blockquote>p {
+ margin:0
+}
+ol,
+ul {
+ padding-left:1.2em
+}
+strong {
+ font-weight:600
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+ font-weight:600;
+ line-height:1.25
+}
+.theme-default-content:not(.custom)>h1,
+.theme-default-content:not(.custom)>h2,
+.theme-default-content:not(.custom)>h3,
+.theme-default-content:not(.custom)>h4,
+.theme-default-content:not(.custom)>h5,
+.theme-default-content:not(.custom)>h6 {
+ margin-top:-3.1rem;
+ padding-top:4.6rem;
+ margin-bottom:0
+}
+.theme-default-content:not(.custom)>h1:first-child,
+.theme-default-content:not(.custom)>h2:first-child,
+.theme-default-content:not(.custom)>h3:first-child,
+.theme-default-content:not(.custom)>h4:first-child,
+.theme-default-content:not(.custom)>h5:first-child,
+.theme-default-content:not(.custom)>h6:first-child {
+ margin-top:-1.5rem;
+ margin-bottom:1rem
+}
+.theme-default-content:not(.custom)>h1:first-child+.custom-block,
+.theme-default-content:not(.custom)>h1:first-child+p,
+.theme-default-content:not(.custom)>h1:first-child+pre,
+.theme-default-content:not(.custom)>h2:first-child+.custom-block,
+.theme-default-content:not(.custom)>h2:first-child+p,
+.theme-default-content:not(.custom)>h2:first-child+pre,
+.theme-default-content:not(.custom)>h3:first-child+.custom-block,
+.theme-default-content:not(.custom)>h3:first-child+p,
+.theme-default-content:not(.custom)>h3:first-child+pre,
+.theme-default-content:not(.custom)>h4:first-child+.custom-block,
+.theme-default-content:not(.custom)>h4:first-child+p,
+.theme-default-content:not(.custom)>h4:first-child+pre,
+.theme-default-content:not(.custom)>h5:first-child+.custom-block,
+.theme-default-content:not(.custom)>h5:first-child+p,
+.theme-default-content:not(.custom)>h5:first-child+pre,
+.theme-default-content:not(.custom)>h6:first-child+.custom-block,
+.theme-default-content:not(.custom)>h6:first-child+p,
+.theme-default-content:not(.custom)>h6:first-child+pre {
+ margin-top:2rem
+}
+h1:focus .header-anchor,
+h1:hover .header-anchor,
+h2:focus .header-anchor,
+h2:hover .header-anchor,
+h3:focus .header-anchor,
+h3:hover .header-anchor,
+h4:focus .header-anchor,
+h4:hover .header-anchor,
+h5:focus .header-anchor,
+h5:hover .header-anchor,
+h6:focus .header-anchor,
+h6:hover .header-anchor {
+ opacity:1
+}
+h1 {
+ font-size:2.2rem
+}
+h2 {
+ font-size:1.65rem;
+ padding-bottom:.3rem;
+ border-bottom:1px solid #eaecef
+}
+h3 {
+ font-size:1.35rem
+}
+a.header-anchor {
+ font-size:.85em;
+ float:left;
+ margin-left:-.87em;
+ padding-right:.23em;
+ margin-top:.125em;
+ opacity:0
+}
+a.header-anchor:focus,
+a.header-anchor:hover {
+ text-decoration:none
+}
+.line-number,
+code,
+kbd {
+ font-family:source-code-pro,Menlo,Monaco,Consolas,Courier New,monospace
+}
+ol,
+p,
+ul {
+ line-height:1.7
+}
+hr {
+ border:0;
+ border-top:1px solid #eaecef
+}
+table {
+ border-collapse:collapse;
+ margin:1rem 0;
+ display:block;
+ overflow-x:auto
+}
+tr {
+ border-top:1px solid #dfe2e5
+}
+tr:nth-child(2n) {
+ background-color:#f6f8fa
+}
+td,
+th {
+ border:1px solid #dfe2e5;
+ padding:.6em 1em
+}
+.theme-container.sidebar-open .sidebar-mask {
+ display:block
+}
+.theme-container.no-navbar .theme-default-content:not(.custom)>h1,
+.theme-container.no-navbar h2,
+.theme-container.no-navbar h3,
+.theme-container.no-navbar h4,
+.theme-container.no-navbar h5,
+.theme-container.no-navbar h6 {
+ margin-top:1.5rem;
+ padding-top:0
+}
+.theme-container.no-navbar .sidebar {
+ top:0
+}
+@media (min-width:720px) {
+ .theme-container.no-sidebar .sidebar {
+  display:none
+ }
+ .theme-container.no-sidebar .page {
+  padding-left:0
+ }
+}
+@media (max-width:959px) {
+ .sidebar {
+  font-size:15px;
+  width:16.4rem
+ }
+ .page {
+  padding-left:16.4rem
+ }
+}
+@media (max-width:719px) {
+ .sidebar {
+  top:0;
+  padding-top:3.6rem;
+  transform:translateX(-100%);
+  transition:transform .2s ease
+ }
+ .page {
+  padding-left:0
+ }
+ .theme-container.sidebar-open .sidebar {
+  transform:translateX(0)
+ }
+ .theme-container.no-navbar .sidebar {
+  padding-top:0
+ }
+}
+@media (max-width:419px) {
+ h1 {
+  font-size:1.9rem
+ }
+ .theme-default-content div[class*=language-] {
+  margin:.85rem -1.5rem;
+  border-radius:0
+ }
+}
+.theme-container .hero img {
+ border-radius:50%;
+ max-height:200px!important
+}
+.theme-container .navbar .site-name,
+.theme-container .sidebar-heading {
+ display:none
+}
+.theme-container .theme-default-content code {
+ color:#2c3e50!important
+}
+.theme-container .theme-default-content .fab {
+ padding:.2em
+}
+.theme-container .theme-default-content pre.language-text {
+ white-space:inherit
+}
+.theme-container .theme-default-content .social {
+ text-align:center
+}
+#nprogress {
+ pointer-events:none
+}
+#nprogress .bar {
+ background:#1768ac;
+ position:fixed;
+ z-index:1031;
+ top:0;
+ left:0;
+ width:100%;
+ height:2px
+}
+#nprogress .peg {
+ display:block;
+ position:absolute;
+ right:0;
+ width:100px;
+ height:100%;
+ box-shadow:0 0 10px #1768ac,0 0 5px #1768ac;
+ opacity:1;
+ transform:rotate(3deg) translateY(-4px)
+}
+#nprogress .spinner {
+ display:block;
+ position:fixed;
+ z-index:1031;
+ top:15px;
+ right:15px
+}
+#nprogress .spinner-icon {
+ width:18px;
+ height:18px;
+ box-sizing:border-box;
+ border-color:#1768ac transparent transparent #1768ac;
+ border-style:solid;
+ border-width:2px;
+ border-radius:50%;
+ -webkit-animation:nprogress-spinner .4s linear infinite;
+ animation:nprogress-spinner .4s linear infinite
+}
+.nprogress-custom-parent {
+ overflow:hidden;
+ position:relative
+}
+.nprogress-custom-parent #nprogress .bar,
+.nprogress-custom-parent #nprogress .spinner {
+ position:absolute
+}
+@-webkit-keyframes nprogress-spinner {
+ 0% {
+  transform:rotate(0deg)
+ }
+ to {
+  transform:rotate(1turn)
+ }
+}
+@keyframes nprogress-spinner {
+ 0% {
+  transform:rotate(0deg)
+ }
+ to {
+  transform:rotate(1turn)
+ }
+}
+html {
+ scroll-behavior:smooth
+}
+.icon.outbound {
+ color:#aaa;
+ display:inline-block;
+ vertical-align:middle;
+ position:relative;
+ top:-1px
+}
+.sr-only {
+ position:absolute;
+ width:1px;
+ height:1px;
+ padding:0;
+ margin:-1px;
+ overflow:hidden;
+ clip:rect(0,0,0,0);
+ white-space:nowrap;
+ border-width:0
+}
+.home {
+ padding:3.6rem 2rem 0;
+ max-width:960px;
+ margin:0 auto;
+ display:block
+}
+.home .hero {
+ text-align:center
+}
+.home .hero img {
+ max-width:100%;
+ max-height:280px;
+ display:block;
+ margin:3rem auto 1.5rem
+}
+.home .hero h1 {
+ font-size:3rem
+}
+.home .hero .action,
+.home .hero .description,
+.home .hero h1 {
+ margin:1.8rem auto
+}
+.home .hero .description {
+ max-width:35rem;
+ font-size:1.6rem;
+ line-height:1.3;
+ color:#6a8bad
+}
+.home .hero .action-button {
+ display:inline-block;
+ font-size:1.2rem;
+ color:#fff;
+ background-color:#1768ac;
+ padding:.8rem 1.6rem;
+ border-radius:4px;
+ transition:background-color .1s ease;
+ box-sizing:border-box;
+ border-bottom:1px solid #155e9b
+}
+.home .hero .action-button:hover {
+ background-color:#1b79c8
+}
+.home .features {
+ border-top:1px solid #eaecef;
+ padding:1.2rem 0;
+ margin-top:2.5rem;
+ display:flex;
+ flex-wrap:wrap;
+ align-items:flex-start;
+ align-content:stretch;
+ justify-content:space-between
+}
+.home .feature {
+ flex-grow:1;
+ flex-basis:30%;
+ max-width:30%
+}
+.home .feature h2 {
+ font-size:1.4rem;
+ font-weight:500;
+ border-bottom:none;
+ padding-bottom:0;
+ color:#3a5169
+}
+.home .feature p {
+ color:#4e6e8e
+}
+.home .footer {
+ padding:2.5rem;
+ border-top:1px solid #eaecef;
+ text-align:center;
+ color:#4e6e8e
+}
+@media (max-width:719px) {
+ .home .features {
+  flex-direction:column
+ }
+ .home .feature {
+  max-width:100%;
+  padding:0 2.5rem
+ }
+}
+@media (max-width:419px) {
+ .home {
+  padding-left:1.5rem;
+  padding-right:1.5rem
+ }
+ .home .hero img {
+  max-height:210px;
+  margin:2rem auto 1.2rem
+ }
+ .home .hero h1 {
+  font-size:2rem
+ }
+ .home .hero .action,
+ .home .hero .description,
+ .home .hero h1 {
+  margin:1.2rem auto
+ }
+ .home .hero .description {
+  font-size:1.2rem
+ }
+ .home .hero .action-button {
+  font-size:1rem;
+  padding:.6rem 1.2rem
+ }
+ .home .feature h2 {
+  font-size:1.25rem
+ }
+}
+.search-box {
+ display:inline-block;
+ position:relative;
+ margin-right:1rem
+}
+.search-box input {
+ cursor:text;
+ width:10rem;
+ height:2rem;
+ color:#4e6e8e;
+ display:inline-block;
+ border:1px solid #cfd4db;
+ border-radius:2rem;
+ font-size:.9rem;
+ line-height:2rem;
+ padding:0 .5rem 0 2rem;
+ outline:none;
+ transition:all .2s ease;
+ background:#fff url(/assets/img/search.83621669.svg) .6rem .5rem no-repeat;
+ background-size:1rem
+}
+.search-box input:focus {
+ cursor:auto;
+ border-color:#1768ac
+}
+.search-box .suggestions {
+ background:#fff;
+ width:20rem;
+ position:absolute;
+ top:2rem;
+ border:1px solid #cfd4db;
+ border-radius:6px;
+ padding:.4rem;
+ list-style-type:none
+}
+.search-box .suggestions.align-right {
+ right:0
+}
+.search-box .suggestion {
+ line-height:1.4;
+ padding:.4rem .6rem;
+ border-radius:4px;
+ cursor:pointer
+}
+.search-box .suggestion a {
+ white-space:normal;
+ color:#5d82a6
+}
+.search-box .suggestion a .page-title {
+ font-weight:600
+}
+.search-box .suggestion a .header {
+ font-size:.9em;
+ margin-left:.25em
+}
+.search-box .suggestion.focused {
+ background-color:#f3f4f5
+}
+.search-box .suggestion.focused a {
+ color:#1768ac
+}
+@media (max-width:959px) {
+ .search-box input {
+  cursor:pointer;
+  width:0;
+  border-color:transparent;
+  position:relative
+ }
+ .search-box input:focus {
+  cursor:text;
+  left:0;
+  width:10rem
+ }
+}
+@media (-ms-high-contrast:none) {
+ .search-box input {
+  height:2rem
+ }
+}
+@media (max-width:959px) and (min-width:719px) {
+ .search-box .suggestions {
+  left:0
+ }
+}
+@media (max-width:719px) {
+ .search-box {
+  margin-right:0
+ }
+ .search-box input {
+  left:1rem
+ }
+ .search-box .suggestions {
+  right:0
+ }
+}
+@media (max-width:419px) {
+ .search-box .suggestions {
+  width:calc(100vw - 4rem)
+ }
+ .search-box input:focus {
+  width:8rem
+ }
+}
+.sidebar-button {
+ cursor:pointer;
+ display:none;
+ width:1.25rem;
+ height:1.25rem;
+ position:absolute;
+ padding:.6rem;
+ top:.6rem;
+ left:1rem
+}
+.sidebar-button .icon {
+ display:block;
+ width:1.25rem;
+ height:1.25rem
+}
+@media (max-width:719px) {
+ .sidebar-button {
+  display:block
+ }
+}
+.dropdown-enter,
+.dropdown-leave-to {
+ height:0!important
+}
+.dropdown-wrapper {
+ cursor:pointer
+}
+.dropdown-wrapper .dropdown-title,
+.dropdown-wrapper .mobile-dropdown-title {
+ display:block;
+ font-size:.9rem;
+ font-family:inherit;
+ cursor:inherit;
+ padding:inherit;
+ line-height:1.4rem;
+ background:transparent;
+ border:none;
+ font-weight:500;
+ color:#2c3e50
+}
+.dropdown-wrapper .dropdown-title:hover,
+.dropdown-wrapper .mobile-dropdown-title:hover {
+ border-color:transparent
+}
+.dropdown-wrapper .dropdown-title .arrow,
+.dropdown-wrapper .mobile-dropdown-title .arrow {
+ vertical-align:middle;
+ margin-top:-1px;
+ margin-left:.4rem
+}
+.dropdown-wrapper .mobile-dropdown-title {
+ display:none;
+ font-weight:600
+}
+.dropdown-wrapper .mobile-dropdown-title font-size inherit:hover {
+ color:#1768ac
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item {
+ color:inherit;
+ line-height:1.7rem
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item h4 {
+ margin:.45rem 0 0;
+ border-top:1px solid #eee;
+ padding:1rem 1.5rem .45rem 1.25rem
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item .dropdown-subitem-wrapper {
+ padding:0;
+ list-style:none
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item .dropdown-subitem-wrapper .dropdown-subitem {
+ font-size:.9em
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item a {
+ display:block;
+ line-height:1.7rem;
+ position:relative;
+ border-bottom:none;
+ font-weight:400;
+ margin-bottom:0;
+ padding:0 1.5rem 0 1.25rem
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active,
+.dropdown-wrapper .nav-dropdown .dropdown-item a:hover {
+ color:#1768ac
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active:after {
+ content:"";
+ width:0;
+ height:0;
+ border-left:5px solid #1768ac;
+ border-top:3px solid transparent;
+ border-bottom:3px solid transparent;
+ position:absolute;
+ top:calc(50% - 2px);
+ left:9px
+}
+.dropdown-wrapper .nav-dropdown .dropdown-item:first-child h4 {
+ margin-top:0;
+ padding-top:0;
+ border-top:0
+}
+@media (max-width:719px) {
+ .dropdown-wrapper.open .dropdown-title {
+  margin-bottom:.5rem
+ }
+ .dropdown-wrapper .dropdown-title {
+  display:none
+ }
+ .dropdown-wrapper .mobile-dropdown-title {
+  display:block
+ }
+ .dropdown-wrapper .nav-dropdown {
+  transition:height .1s ease-out;
+  overflow:hidden
+ }
+ .dropdown-wrapper .nav-dropdown .dropdown-item h4 {
+  border-top:0;
+  margin-top:0;
+  padding-top:0
+ }
+ .dropdown-wrapper .nav-dropdown .dropdown-item>a,
+ .dropdown-wrapper .nav-dropdown .dropdown-item h4 {
+  font-size:15px;
+  line-height:2rem
+ }
+ .dropdown-wrapper .nav-dropdown .dropdown-item .dropdown-subitem {
+  font-size:14px;
+  padding-left:1rem
+ }
+}
+@media (min-width:719px) {
+ .dropdown-wrapper {
+  height:1.8rem
+ }
+ .dropdown-wrapper.open .nav-dropdown,
+ .dropdown-wrapper:hover .nav-dropdown {
+  display:block!important
+ }
+ .dropdown-wrapper.open:blur {
+  display:none
+ }
+ .dropdown-wrapper .nav-dropdown {
+  display:none;
+  height:auto!important;
+  box-sizing:border-box;
+  max-height:calc(100vh - 2.7rem);
+  overflow-y:auto;
+  position:absolute;
+  top:100%;
+  right:0;
+  background-color:#fff;
+  padding:.6rem 0;
+  border:1px solid;
+  border-color:#ddd #ddd #ccc;
+  text-align:left;
+  border-radius:.25rem;
+  white-space:nowrap;
+  margin:0
+ }
+}
+.nav-links {
+ display:inline-block
+}
+.nav-links a {
+ line-height:1.4rem;
+ color:inherit
+}
+.nav-links a.router-link-active,
+.nav-links a:hover {
+ color:#1768ac
+}
+.nav-links .nav-item {
+ position:relative;
+ display:inline-block;
+ margin-left:1.5rem;
+ line-height:2rem
+}
+.nav-links .nav-item:first-child {
+ margin-left:0
+}
+.nav-links .repo-link {
+ margin-left:1.5rem
+}
+@media (max-width:719px) {
+ .nav-links .nav-item,
+ .nav-links .repo-link {
+  margin-left:0
+ }
+}
+@media (min-width:719px) {
+ .nav-links a.router-link-active,
+ .nav-links a:hover {
+  color:#2c3e50
+ }
+ .nav-item>a:not(.external).router-link-active,
+ .nav-item>a:not(.external):hover {
+  margin-bottom:-2px;
+  border-bottom:2px solid #1a75c2
+ }
+}
+.navbar {
+ padding:.7rem 1.5rem;
+ line-height:2.2rem
+}
+.navbar a,
+.navbar img,
+.navbar span {
+ display:inline-block
+}
+.navbar .logo {
+ height:2.2rem;
+ min-width:2.2rem;
+ margin-right:.8rem;
+ vertical-align:top
+}
+.navbar .site-name {
+ font-size:1.3rem;
+ font-weight:600;
+ color:#2c3e50;
+ position:relative
+}
+.navbar .links {
+ padding-left:1.5rem;
+ box-sizing:border-box;
+ background-color:#fff;
+ white-space:nowrap;
+ font-size:.9rem;
+ position:absolute;
+ right:1.5rem;
+ top:.7rem;
+ display:flex
+}
+.navbar .links .search-box {
+ flex:0 0 auto;
+ vertical-align:top
+}
+@media (max-width:719px) {
+ .navbar {
+  padding-left:4rem
+ }
+ .navbar .can-hide {
+  display:none
+ }
+ .navbar .links {
+  padding-left:1.5rem
+ }
+ .navbar .site-name {
+  width:calc(100vw - 9.4rem);
+  overflow:hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis
+ }
+}
+.page-edit {
+ max-width:740px;
+ margin:0 auto;
+ padding:2rem 2.5rem
+}
+@media (max-width:959px) {
+ .page-edit {
+  padding:2rem
+ }
+}
+@media (max-width:419px) {
+ .page-edit {
+  padding:1.5rem
+ }
+}
+.page-edit {
+ padding-top:1rem;
+ padding-bottom:1rem;
+ overflow:auto
+}
+.page-edit .edit-link {
+ display:inline-block
+}
+.page-edit .edit-link a {
+ color:#4e6e8e;
+ margin-right:.25rem
+}
+.page-edit .last-updated {
+ float:right;
+ font-size:.9em
+}
+.page-edit .last-updated .prefix {
+ font-weight:500;
+ color:#4e6e8e
+}
+.page-edit .last-updated .time {
+ font-weight:400;
+ color:#767676
+}
+@media (max-width:719px) {
+ .page-edit .edit-link {
+  margin-bottom:.5rem
+ }
+ .page-edit .last-updated {
+  font-size:.8em;
+  float:none;
+  text-align:left
+ }
+}
+.page-nav {
+ max-width:740px;
+ margin:0 auto;
+ padding:2rem 2.5rem
+}
+@media (max-width:959px) {
+ .page-nav {
+  padding:2rem
+ }
+}
+@media (max-width:419px) {
+ .page-nav {
+  padding:1.5rem
+ }
+}
+.page-nav {
+ padding-top:1rem;
+ padding-bottom:0
+}
+.page-nav .inner {
+ min-height:2rem;
+ margin-top:0;
+ border-top:1px solid #eaecef;
+ padding-top:1rem;
+ overflow:auto
+}
+.page-nav .next {
+ float:right
+}
+.page {
+ padding-bottom:2rem;
+ display:block
+}
+.sidebar-group .sidebar-group {
+ padding-left:.5em
+}
+.sidebar-group:not(.collapsable) .sidebar-heading:not(.clickable) {
+ cursor:auto;
+ color:inherit
+}
+.sidebar-group.is-sub-group {
+ padding-left:0
+}
+.sidebar-group.is-sub-group>.sidebar-heading {
+ font-size:.95em;
+ line-height:1.4;
+ font-weight:400;
+ padding-left:2rem
+}
+.sidebar-group.is-sub-group>.sidebar-heading:not(.clickable) {
+ opacity:.5
+}
+.sidebar-group.is-sub-group>.sidebar-group-items {
+ padding-left:1rem
+}
+.sidebar-group.is-sub-group>.sidebar-group-items>li>.sidebar-link {
+ font-size:.95em;
+ border-left:none
+}
+.sidebar-group.depth-2>.sidebar-heading {
+ border-left:none
+}
+.sidebar-heading {
+ color:#2c3e50;
+ transition:color .15s ease;
+ cursor:pointer;
+ font-size:1.1em;
+ font-weight:700;
+ padding:.35rem 1.5rem .35rem 1.25rem;
+ width:100%;
+ box-sizing:border-box;
+ margin:0;
+ border-left:.25rem solid transparent
+}
+.sidebar-heading.open,
+.sidebar-heading:hover {
+ color:inherit
+}
+.sidebar-heading .arrow {
+ position:relative;
+ top:-.12em;
+ left:.5em
+}
+.sidebar-heading.clickable.active {
+ font-weight:600;
+ color:#1768ac;
+ border-left-color:#1768ac
+}
+.sidebar-heading.clickable:hover {
+ color:#1768ac
+}
+.sidebar-group-items {
+ transition:height .1s ease-out;
+ font-size:.95em;
+ overflow:hidden
+}
+.sidebar .sidebar-sub-headers {
+ padding-left:1rem;
+ font-size:.95em
+}
+a.sidebar-link {
+ font-size:1em;
+ font-weight:400;
+ display:inline-block;
+ color:#2c3e50;
+ border-left:.25rem solid transparent;
+ padding:.35rem 1rem .35rem 1.25rem;
+ line-height:1.4;
+ width:100%;
+ box-sizing:border-box
+}
+a.sidebar-link:hover {
+ color:#1768ac
+}
+a.sidebar-link.active {
+ font-weight:600;
+ color:#1768ac;
+ border-left-color:#1768ac
+}
+.sidebar-group a.sidebar-link {
+ padding-left:2rem
+}
+.sidebar-sub-headers a.sidebar-link {
+ padding-top:.25rem;
+ padding-bottom:.25rem;
+ border-left:none
+}
+.sidebar-sub-headers a.sidebar-link.active {
+ font-weight:500
+}
+.sidebar ul {
+ padding:0;
+ margin:0;
+ list-style-type:none
+}
+.sidebar a {
+ display:inline-block
+}
+.sidebar .nav-links {
+ display:none;
+ border-bottom:1px solid #eaecef;
+ padding:.5rem 0 .75rem
+}
+.sidebar .nav-links a {
+ font-weight:600
+}
+.sidebar .nav-links .nav-item,
+.sidebar .nav-links .repo-link {
+ display:block;
+ line-height:1.25rem;
+ font-size:1.1em;
+ padding:.5rem 0 .5rem 1.5rem
+}
+.sidebar>.sidebar-links {
+ padding:1.5rem 0
+}
+.sidebar>.sidebar-links>li>a.sidebar-link {
+ font-size:1.1em;
+ line-height:1.7;
+ font-weight:700
+}
+.sidebar>.sidebar-links>li:not(:first-child) {
+ margin-top:.75rem
+}
+@media (max-width:719px) {
+ .sidebar .nav-links {
+  display:block
+ }
+ .sidebar .nav-links .dropdown-wrapper .nav-dropdown .dropdown-item a.router-link-active:after {
+  top:calc(1rem - 2px)
+ }
+ .sidebar>.sidebar-links {
+  padding:1rem 0
+ }
+}
+.badge[data-v-15b7b770] {
+ display:inline-block;
+ font-size:14px;
+ height:18px;
+ line-height:18px;
+ border-radius:3px;
+ padding:0 6px;
+ color:#fff
+}
+.badge.green[data-v-15b7b770],
+.badge.tip[data-v-15b7b770],
+.badge[data-v-15b7b770] {
+ background-color:#42b983
+}
+.badge.error[data-v-15b7b770] {
+ background-color:#da5961
+}
+.badge.warn[data-v-15b7b770],
+.badge.warning[data-v-15b7b770],
+.badge.yellow[data-v-15b7b770] {
+ background-color:#e7c000
+}
+.badge+.badge[data-v-15b7b770] {
+ margin-left:5px
+}
+.theme-code-block[data-v-6d04095e] {
+ display:none
+}
+.theme-code-block__active[data-v-6d04095e] {
+ display:block
+}
+.theme-code-block>pre[data-v-6d04095e] {
+ background-color:orange
+}
+.theme-code-group__nav[data-v-32c2d7ed] {
+ margin-bottom:-35px;
+ background-color:#f3f5f7;
+ padding-bottom:22px;
+ border-top-left-radius:6px;
+ border-top-right-radius:6px;
+ padding-left:10px;
+ padding-top:10px
+}
+.theme-code-group__ul[data-v-32c2d7ed] {
+ margin:auto 0;
+ padding-left:0;
+ display:inline-flex;
+ list-style:none
+}
+.theme-code-group__nav-tab[data-v-32c2d7ed] {
+ border:0;
+ padding:5px;
+ cursor:pointer;
+ background-color:transparent;
+ font-size:.85em;
+ line-height:1.4;
+ color:hsla(0,0%,100%,.9);
+ font-weight:600
+}
+.theme-code-group__nav-tab-active[data-v-32c2d7ed] {
+ border-bottom:1px solid #42b983
+}
+.pre-blank[data-v-32c2d7ed] {
+ color:#42b983
+}
 
-#
-Privacy Policy
-#
-Data Controller and Owner
-
-https://firemint.github.io
-
-#
-Note
-
-Data collected on Ethereum blockchain are public for its own nature. So any data stored in Ethereum blockchain may be accessible through other applications or exploring the blockchain itself.
-#
-Types of Data collected
-
-Among the types of Personal Data that this Application collects, by itself or through third parties, there are: Cookies, Usage Data and email address.
-
-Complete details on each type of Personal Data collected are provided in the dedicated sections of this privacy policy or by specific explanation texts displayed prior to the Data collection. Personal Data may be freely provided by the User, or, in case of Usage Data, collected automatically when using this Application. Unless specified otherwise, all Data requested by this Application is mandatory and failure to provide this Data may make it impossible for this Application to provide its services. In cases where this Application specifically states that some Data is not mandatory, Users are free not to communicate this Data without consequences to the availability or the functioning of the Service. Users who are uncertain about which Personal Data is mandatory are welcome to contact the Owner. Any use of Cookies – or of other tracking tools – by this Application or by the owners of third-party services used by this Application serves the purpose of providing the Service required by the User, in addition to any other purposes described in the present document and in the Cookie Policy, if available.
-
-Users are responsible for any third-party Personal Data obtained, published or shared through this Application and confirm that they have the third party's consent to provide the Data to the Owner.
-#
-Mode and place of processing the Data
-
-Methods of processing The Owner takes appropriate security measures to prevent unauthorized access, disclosure, modification, or unauthorized destruction of the Data. The Data processing is carried out using computers and/or IT enabled tools, following organizational procedures and modes strictly related to the purposes indicated. In addition to the Owner, in some cases, the Data may be accessible to certain types of persons in charge, involved with the operation of this Application (administration, sales, marketing, legal, system administration) or external parties (such as third-party technical service providers, mail carriers, hosting providers, IT companies, communications agencies) appointed, if necessary, as Data Processors by the Owner. The updated list of these parties may be requested from the Owner at any time.
-#
-Legal basis of processing
-
-The Owner may process Personal Data relating to Users if one of the following applies:
-
-    Users have given their consent for one or more specific purposes. Note: Under some legislations the Owner may be allowed to process Personal Data until the User objects to such processing (“opt-out”), without having to rely on consent or any other of the following legal bases. This, however, does not apply, whenever the processing of Personal Data is subject to European data protection law;
-    provision of Data is necessary for the performance of an agreement with the User and/or for any pre-contractual obligations thereof;
-    processing is necessary for compliance with a legal obligation to which the Owner is subject;
-    processing is related to a task that is carried out in the public interest or in the exercise of official authority vested in the Owner;
-    processing is necessary for the purposes of the legitimate interests pursued by the Owner or by a third party.
-
-In any case, the Owner will gladly help to clarify the specific legal basis that applies to the processing, and in particular whether the provision of Personal Data is a statutory or contractual requirement, or a requirement necessary to enter into a contract.
-#
-Place
-
-The Data is processed at the Owner's operating offices and in any other places where the parties involved in the processing are located.
-
-Depending on the User's location, data transfers may involve transferring the User's Data to a country other than their own. To find out more about the place of processing of such transferred Data, Users can check the section containing details about the processing of Personal Data.
-
-Users are also entitled to learn about the legal basis of Data transfers to a country outside the European Union or to any international organization governed by public international law or set up by two or more countries, such as the UN, and about the security measures taken by the Owner to safeguard their Data.
-
-If any such transfer takes place, Users can find out more by checking the relevant sections of this document or inquire with the Owner using the information provided in the contact section.
-#
-Retention time
-
-Personal Data shall be processed and stored for as long as required by the purpose they have been collected for.
-
-Therefore:
-
-    Personal Data collected for purposes related to the performance of a contract between the Owner and the User shall be retained until such contract has been fully performed.
-    Personal Data collected for the purposes of the Owner’s legitimate interests shall be retained as long as needed to fulfill such purposes. Users may find specific information regarding the legitimate interests pursued by the Owner within the relevant sections of this document or by contacting the Owner.
-
-The Owner may be allowed to retain Personal Data for a longer period whenever the User has given consent to such processing, as long as such consent is not withdrawn. Furthermore, the Owner may be obliged to retain Personal Data for a longer period whenever required to do so for the performance of a legal obligation or upon order of an authority.
-
-Once the retention period expires, Personal Data shall be deleted. Therefore, the right to access, the right to erasure, the right to rectification and the right to data portability cannot be enforced after expiration of the retention period.
-#
-The purposes of processing
-
-The Data concerning the User is collected to allow the Owner to provide its Services, as well as for the following purposes: Analytics, Content commenting, Managing contacts and sending messages and Interaction with live chat platforms.
-
-Users can find further detailed information about such purposes of processing and about the specific Personal Data used for each purpose in the respective sections of this document.
-#
-Detailed information on the processing of Personal Data
-
-Personal Data is collected for the following purposes and using the following services:
-
-    Google Analytics Google Analytics is a web analysis service provided by Google LLC or by Google Ireland Limited, depending on the location this Application is accessed from, (“Google”). Google utilizes the Data collected to track and examine the use of this Application, to prepare reports on its activities and share them with other Google services. Google may use the Data collected to contextualize and personalize the ads of its own advertising network. Personal Data collected: Cookies and Usage Data.
-
-Place of processing: United States or Ireland – Privacy Policy
-
-(opens new window)
-
-    Facebook Ads conversion tracking (Facebook pixel) Facebook Ads conversion tracking (Facebook pixel) is an analytics service provided by Facebook, Inc. or by Facebook Ireland Ltd, depending on the location this Application is accessed from, that connects data from the Facebook advertising network with actions performed on this Application. The Facebook pixel tracks conversions that can be attributed to ads on Facebook, Instagram and Audience Network. Personal Data collected: Cookies and Usage Data.
-
-Place of processing: United States or Ireland – Privacy Policy
-
-(opens new window)
-#
-The rights of Users
-
-Users may exercise certain rights regarding their Data processed by the Owner.
-
-In particular, Users have the right to do the following:
-
-    Withdraw their consent at any time. Users have the right to withdraw consent where they have previously given their consent to the processing of their Personal Data.
-    Object to processing of their Data. Users have the right to object to the processing of their Data if the processing is carried out on a legal basis other than consent. Further details are provided in the dedicated section below.
-    Access their Data. Users have the right to learn if Data is being processed by the Owner, obtain disclosure regarding certain aspects of the processing and obtain a copy of the Data undergoing processing.
-    Verify and seek rectification. Users have the right to verify the accuracy of their Data and ask for it to be updated or corrected.
-    Restrict the processing of their Data. Users have the right, under certain circumstances, to restrict the processing of their Data. In this case, the Owner will not process their Data for any purpose other than storing it.
-    Have their Personal Data deleted or otherwise removed. Users have the right, under certain circumstances, to obtain the erasure of their Data from the Owner.
-    Receive their Data and have it transferred to another controller. Users have the right to receive their Data in a structured, commonly used and machine readable format and, if technically feasible, to have it transmitted to another controller without any hindrance. This provision is applicable provided that the Data is processed by automated means and that the processing is based on the User's consent, on a contract which the User is part of or on pre-contractual obligations thereof.
-    Lodge a complaint. Users have the right to bring a claim before their competent data protection authority.
-
-#
-Details about the right to object to processing
-
-Where Personal Data is processed for a public interest, in the exercise of an official authority vested in the Owner or for the purposes of the legitimate interests pursued by the Owner, Users may object to such processing by providing a ground related to their particular situation to justify the objection.
-
-Users must know that, however, should their Personal Data be processed for direct marketing purposes, they can object to that processing at any time without providing any justification. To learn, whether the Owner is processing Personal Data for direct marketing purposes, Users may refer to the relevant sections of this document.
-#
-How to exercise these rights
-
-Any requests to exercise User rights can be directed to the Owner through the contact details provided in this document. These requests can be exercised free of charge and will be addressed by the Owner as early as possible and always within one month.
-#
-Additional information about Data collection and processing
-#
-Legal action
-
-The User's Personal Data may be used for legal purposes by the Owner in Court or in the stages leading to possible legal action arising from improper use of this Application or the related Services. The User declares to be aware that the Owner may be required to reveal personal data upon request of public authorities.
-#
-Additional information about User's Personal Data
-
-In addition to the information contained in this privacy policy, this Application may provide the User with additional and contextual information concerning particular Services or the collection and processing of Personal Data upon request.
-#
-System logs and maintenance
-
-For operation and maintenance purposes, this Application and any third-party services may collect files that record interaction with this Application (System logs) use other Personal Data (such as the IP Address) for this purpose.
-#
-Information not contained in this policy
-
-More details concerning the collection or processing of Personal Data may be requested from the Owner at any time. Please see the contact information at the beginning of this document.
-#
-How “Do Not Track” requests are handled
-
-This Application does not support “Do Not Track” requests. To determine whether any of the third-party services it uses honor the “Do Not Track” requests, please read their privacy policies.
-#
-Changes to this privacy policy
-
-The Owner reserves the right to make changes to this privacy policy at any time by giving notice to its Users on this page and possibly within this Application and/or - as far as technically and legally feasible - sending a notice to Users via any contact information available to the Owner. It is strongly recommended to check this page often, referring to the date of the last modification listed at the bottom.
-
-Should the changes affect processing activities performed on the basis of the User’s consent, the Owner shall collect new consent from the User, where required.
-#
-Definitions and legal references
-#
-Personal Data (or Data)
-
-Any information that directly, indirectly, or in connection with other information — including a personal identification number — allows for the identification or identifiability of a natural person.
-#
-Usage Data
-
-Information collected automatically through this Application (or third-party services employed in this Application), which can include: the IP addresses or domain names of the computers utilized by the Users who use this Application, the URI addresses (Uniform Resource Identifier), the time of the request, the method utilized to submit the request to the server, the size of the file received in response, the numerical code indicating the status of the server's answer (successful outcome, error, etc.), the country of origin, the features of the browser and the operating system utilized by the User, the various time details per visit (e.g., the time spent on each page within the Application) and the details about the path followed within the Application with special reference to the sequence of pages visited, and other parameters about the device operating system and/or the User's IT environment.
-#
-User
-
-The individual using this Application who, unless otherwise specified, coincides with the Data Subject.
-#
-Data Subject
-
-The natural person to whom the Personal Data refers.
-#
-Data Processor (or Data Supervisor)
-
-The natural or legal person, public authority, agency or other body which processes Personal Data on behalf of the Controller, as described in this privacy policy.
-#
-Data Controller (or Owner)
-
-The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of Personal Data, including the security measures concerning the operation and use of this Application. The Data Controller, unless otherwise specified, is the Owner of this Application.
-#
-This Application
-
-The means by which the Personal Data of the User is collected and processed.
-#
-Service
-
-The service provided by this Application as described in the relative terms (if available) and on this site/application.
-#
-European Union (or EU)
-
-Unless otherwise specified, all references made within this document to the European Union include all current member states to the European Union and the European Economic Area.
-#
-Cookies
-
-Small piece of data stored in the User's device.
-#
-Legal information
-
-This privacy statement has been prepared based on provisions of multiple legislations, including Art. 13/14 of Regulation (EU) 2016/679 (General Data Protection Regulation).
-
-This privacy policy relates solely to this Application, if not stated otherwise within this document.
+    </style>
+  </head>
+  <body> 
+<div id="app">
+<div class="theme-container no-navbar no-sidebar">
+<div class="theme-default-content content__default">
+<h2 id="privacy-policy"><a class="header-anchor" href="https://firemtint.github.io/bep20-generator-terms/privacy.html/#privacy-policy">#</a> Privacy Policy</h2>
+<h3 id="data-controller-and-owner"><a class="header-anchor" href="https://firemint.github.io/privacy/#data-controller-and-owner">#</a> Data Controller and Owner</h3>
+<p>https://firemint.github.io</p>
+<h3 id="note"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#note">#</a> Note</h3>
+<p>Data collected on Ethereum blockchain are public for its own nature. So any data stored in Ethereum blockchain may be accessible through other applications or exploring the blockchain itself.</p>
+<h3 id="types-of-data-collected"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#types-of-data-collected">#</a> Types of Data collected</h3>
+<p>Among the types of Personal Data that this Application collects, by itself or through third parties, there are: Cookies, Usage Data and email address.</p>
+<p>Complete details on each type of Personal Data collected are provided in the dedicated sections of this privacy policy or by specific explanation texts displayed prior to the Data collection. Personal Data may be freely provided by the User, or, in case of Usage Data, collected automatically when using this Application. Unless specified otherwise, all Data requested by this Application is mandatory and failure to provide this Data may make it impossible for this Application to provide its services. In cases where this Application specifically states that some Data is not mandatory, Users are free not to communicate this Data without consequences to the availability or the functioning of the Service. Users who are uncertain about which Personal Data is mandatory are welcome to contact the Owner. Any use of Cookies &ndash; or of other tracking tools &ndash; by this Application or by the owners of third-party services used by this Application serves the purpose of providing the Service required by the User, in addition to any other purposes described in the present document and in the Cookie Policy, if available.</p>
+<p>Users are responsible for any third-party Personal Data obtained, published or shared through this Application and confirm that they have the third party's consent to provide the Data to the Owner.</p>
+<h3 id="mode-and-place-of-processing-the-data"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#mode-and-place-of-processing-the-data">#</a> Mode and place of processing the Data</h3>
+<p>Methods of processing The Owner takes appropriate security measures to prevent unauthorized access, disclosure, modification, or unauthorized destruction of the Data. The Data processing is carried out using computers and/or IT enabled tools, following organizational procedures and modes strictly related to the purposes indicated. In addition to the Owner, in some cases, the Data may be accessible to certain types of persons in charge, involved with the operation of this Application (administration, sales, marketing, legal, system administration) or external parties (such as third-party technical service providers, mail carriers, hosting providers, IT companies, communications agencies) appointed, if necessary, as Data Processors by the Owner. The updated list of these parties may be requested from the Owner at any time.</p>
+<h4 id="legal-basis-of-processing"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#legal-basis-of-processing">#</a> Legal basis of processing</h4>
+<p>The Owner may process Personal Data relating to Users if one of the following applies:</p>
+<ul>
+<li>Users have given their consent for one or more specific purposes. Note: Under some legislations the Owner may be allowed to process Personal Data until the User objects to such processing (&ldquo;opt-out&rdquo;), without having to rely on consent or any other of the following legal bases. This, however, does not apply, whenever the processing of Personal Data is subject to European data protection law;</li>
+<li>provision of Data is necessary for the performance of an agreement with the User and/or for any pre-contractual obligations thereof;</li>
+<li>processing is necessary for compliance with a legal obligation to which the Owner is subject;</li>
+<li>processing is related to a task that is carried out in the public interest or in the exercise of official authority vested in the Owner;</li>
+<li>processing is necessary for the purposes of the legitimate interests pursued by the Owner or by a third party.</li>
+</ul>
+<p>In any case, the Owner will gladly help to clarify the specific legal basis that applies to the processing, and in particular whether the provision of Personal Data is a statutory or contractual requirement, or a requirement necessary to enter into a contract.</p>
+<h4 id="place"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#place">#</a> Place</h4>
+<p>The Data is processed at the Owner's operating offices and in any other places where the parties involved in the processing are located.</p>
+<p>Depending on the User's location, data transfers may involve transferring the User's Data to a country other than their own. To find out more about the place of processing of such transferred Data, Users can check the section containing details about the processing of Personal Data.</p>
+<p>Users are also entitled to learn about the legal basis of Data transfers to a country outside the European Union or to any international organization governed by public international law or set up by two or more countries, such as the UN, and about the security measures taken by the Owner to safeguard their Data.</p>
+<p>If any such transfer takes place, Users can find out more by checking the relevant sections of this document or inquire with the Owner using the information provided in the contact section.</p>
+<h4 id="retention-time"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#retention-time">#</a> Retention time</h4>
+<p>Personal Data shall be processed and stored for as long as required by the purpose they have been collected for.</p>
+<p>Therefore:</p>
+<ul>
+<li>Personal Data collected for purposes related to the performance of a contract between the Owner and the User shall be retained until such contract has been fully performed.</li>
+<li>Personal Data collected for the purposes of the Owner&rsquo;s legitimate interests shall be retained as long as needed to fulfill such purposes. Users may find specific information regarding the legitimate interests pursued by the Owner within the relevant sections of this document or by contacting the Owner.</li>
+</ul>
+<p>The Owner may be allowed to retain Personal Data for a longer period whenever the User has given consent to such processing, as long as such consent is not withdrawn. Furthermore, the Owner may be obliged to retain Personal Data for a longer period whenever required to do so for the performance of a legal obligation or upon order of an authority.</p>
+<p>Once the retention period expires, Personal Data shall be deleted. Therefore, the right to access, the right to erasure, the right to rectification and the right to data portability cannot be enforced after expiration of the retention period.</p>
+<h3 id="the-purposes-of-processing"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#the-purposes-of-processing">#</a> The purposes of processing</h3>
+<p>The Data concerning the User is collected to allow the Owner to provide its Services, as well as for the following purposes: Analytics, Content commenting, Managing contacts and sending messages and Interaction with live chat platforms.</p>
+<p>Users can find further detailed information about such purposes of processing and about the specific Personal Data used for each purpose in the respective sections of this document.</p>
+<h3 id="detailed-information-on-the-processing-of-personal-data"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#detailed-information-on-the-processing-of-personal-data">#</a> Detailed information on the processing of Personal Data</h3>
+<p>Personal Data is collected for the following purposes and using the following services:</p>
+<ul>
+<li>Google Analytics Google Analytics is a web analysis service provided by Google LLC or by Google Ireland Limited, depending on the location this Application is accessed from, (&ldquo;Google&rdquo;). Google utilizes the Data collected to track and examine the use of this Application, to prepare reports on its activities and share them with other Google services. Google may use the Data collected to contextualize and personalize the ads of its own advertising network. Personal Data collected: Cookies and Usage Data.</li>
+</ul>
+<p>Place of processing: United States or Ireland &ndash; <a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener noreferrer">Privacy Policy</a></p>
+</div>
+</div>
+</div>
+<p><a href="https://policies.google.com/privacy?hl=en" target="_blank" rel="noopener noreferrer"> <span class="sr-only">(opens new window)</span></a></p>
+<ul>
+<li>Facebook Ads conversion tracking (Facebook pixel) Facebook Ads conversion tracking (Facebook pixel) is an analytics service provided by Facebook, Inc. or by Facebook Ireland Ltd, depending on the location this Application is accessed from, that connects data from the Facebook advertising network with actions performed on this Application. The Facebook pixel tracks conversions that can be attributed to ads on Facebook, Instagram and Audience Network. Personal Data collected: Cookies and Usage Data.</li>
+</ul>
+<p>Place of processing: United States or Ireland &ndash; <a href="https://www.facebook.com/about/privacy/" target="_blank" rel="noopener noreferrer">Privacy Policy</a></p>
+<div id="app">
+<div class="theme-container no-navbar no-sidebar">
+<div class="theme-default-content content__default">
+<p><a href="https://www.facebook.com/about/privacy/" target="_blank" rel="noopener noreferrer"> <span class="sr-only">(opens new window)</span></a></p>
+<h3 id="the-rights-of-users"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#the-rights-of-users">#</a> The rights of Users</h3>
+<p>Users may exercise certain rights regarding their Data processed by the Owner.</p>
+<p>In particular, Users have the right to do the following:</p>
+<ul>
+<li>Withdraw their consent at any time. Users have the right to withdraw consent where they have previously given their consent to the processing of their Personal Data.</li>
+<li>Object to processing of their Data. Users have the right to object to the processing of their Data if the processing is carried out on a legal basis other than consent. Further details are provided in the dedicated section below.</li>
+<li>Access their Data. Users have the right to learn if Data is being processed by the Owner, obtain disclosure regarding certain aspects of the processing and obtain a copy of the Data undergoing processing.</li>
+<li>Verify and seek rectification. Users have the right to verify the accuracy of their Data and ask for it to be updated or corrected.</li>
+<li>Restrict the processing of their Data. Users have the right, under certain circumstances, to restrict the processing of their Data. In this case, the Owner will not process their Data for any purpose other than storing it.</li>
+<li>Have their Personal Data deleted or otherwise removed. Users have the right, under certain circumstances, to obtain the erasure of their Data from the Owner.</li>
+<li>Receive their Data and have it transferred to another controller. Users have the right to receive their Data in a structured, commonly used and machine readable format and, if technically feasible, to have it transmitted to another controller without any hindrance. This provision is applicable provided that the Data is processed by automated means and that the processing is based on the User's consent, on a contract which the User is part of or on pre-contractual obligations thereof.</li>
+<li>Lodge a complaint. Users have the right to bring a claim before their competent data protection authority.</li>
+</ul>
+<h4 id="details-about-the-right-to-object-to-processing"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#details-about-the-right-to-object-to-processing">#</a> Details about the right to object to processing</h4>
+<p>Where Personal Data is processed for a public interest, in the exercise of an official authority vested in the Owner or for the purposes of the legitimate interests pursued by the Owner, Users may object to such processing by providing a ground related to their particular situation to justify the objection.</p>
+<p>Users must know that, however, should their Personal Data be processed for direct marketing purposes, they can object to that processing at any time without providing any justification. To learn, whether the Owner is processing Personal Data for direct marketing purposes, Users may refer to the relevant sections of this document.</p>
+<h4 id="how-to-exercise-these-rights"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#how-to-exercise-these-rights">#</a> How to exercise these rights</h4>
+<p>Any requests to exercise User rights can be directed to the Owner through the contact details provided in this document. These requests can be exercised free of charge and will be addressed by the Owner as early as possible and always within one month.</p>
+<h3 id="additional-information-about-data-collection-and-processing"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#additional-information-about-data-collection-and-processing">#</a> Additional information about Data collection and processing</h3>
+<h4 id="legal-action"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#legal-action">#</a> Legal action</h4>
+<p>The User's Personal Data may be used for legal purposes by the Owner in Court or in the stages leading to possible legal action arising from improper use of this Application or the related Services. The User declares to be aware that the Owner may be required to reveal personal data upon request of public authorities.</p>
+<h4 id="additional-information-about-user-s-personal-data"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#additional-information-about-user-s-personal-data">#</a> Additional information about User's Personal Data</h4>
+<p>In addition to the information contained in this privacy policy, this Application may provide the User with additional and contextual information concerning particular Services or the collection and processing of Personal Data upon request.</p>
+<h4 id="system-logs-and-maintenance"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#system-logs-and-maintenance">#</a> System logs and maintenance</h4>
+<p>For operation and maintenance purposes, this Application and any third-party services may collect files that record interaction with this Application (System logs) use other Personal Data (such as the IP Address) for this purpose.</p>
+<h4 id="information-not-contained-in-this-policy"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#information-not-contained-in-this-policy">#</a> Information not contained in this policy</h4>
+<p>More details concerning the collection or processing of Personal Data may be requested from the Owner at any time. Please see the contact information at the beginning of this document.</p>
+<h4 id="how-do-not-track-requests-are-handled"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#how-do-not-track-requests-are-handled">#</a> How &ldquo;Do Not Track&rdquo; requests are handled</h4>
+<p>This Application does not support &ldquo;Do Not Track&rdquo; requests. To determine whether any of the third-party services it uses honor the &ldquo;Do Not Track&rdquo; requests, please read their privacy policies.</p>
+<h4 id="changes-to-this-privacy-policy"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#changes-to-this-privacy-policy">#</a> Changes to this privacy policy</h4>
+<p>The Owner reserves the right to make changes to this privacy policy at any time by giving notice to its Users on this page and possibly within this Application and/or - as far as technically and legally feasible - sending a notice to Users via any contact information available to the Owner. It is strongly recommended to check this page often, referring to the date of the last modification listed at the bottom.</p>
+<p>Should the changes affect processing activities performed on the basis of the User&rsquo;s consent, the Owner shall collect new consent from the User, where required.</p>
+<h3 id="definitions-and-legal-references"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#definitions-and-legal-references">#</a> Definitions and legal references</h3>
+<h4 id="personal-data-or-data"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#personal-data-or-data">#</a> Personal Data (or Data)</h4>
+<p>Any information that directly, indirectly, or in connection with other information &mdash; including a personal identification number &mdash; allows for the identification or identifiability of a natural person.</p>
+<h4 id="usage-data"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#usage-data">#</a> Usage Data</h4>
+<p>Information collected automatically through this Application (or third-party services employed in this Application), which can include: the IP addresses or domain names of the computers utilized by the Users who use this Application, the URI addresses (Uniform Resource Identifier), the time of the request, the method utilized to submit the request to the server, the size of the file received in response, the numerical code indicating the status of the server's answer (successful outcome, error, etc.), the country of origin, the features of the browser and the operating system utilized by the User, the various time details per visit (e.g., the time spent on each page within the Application) and the details about the path followed within the Application with special reference to the sequence of pages visited, and other parameters about the device operating system and/or the User's IT environment.</p>
+<h4 id="user"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#user">#</a> User</h4>
+<p>The individual using this Application who, unless otherwise specified, coincides with the Data Subject.</p>
+<h4 id="data-subject"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#data-subject">#</a> Data Subject</h4>
+<p>The natural person to whom the Personal Data refers.</p>
+<h4 id="data-processor-or-data-supervisor"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#data-processor-or-data-supervisor">#</a> Data Processor (or Data Supervisor)</h4>
+<p>The natural or legal person, public authority, agency or other body which processes Personal Data on behalf of the Controller, as described in this privacy policy.</p>
+<h4 id="data-controller-or-owner"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#data-controller-or-owner">#</a> Data Controller (or Owner)</h4>
+<p>The natural or legal person, public authority, agency or other body which, alone or jointly with others, determines the purposes and means of the processing of Personal Data, including the security measures concerning the operation and use of this Application. The Data Controller, unless otherwise specified, is the Owner of this Application.</p>
+<h4 id="this-application"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#this-application">#</a> This Application</h4>
+<p>The means by which the Personal Data of the User is collected and processed.</p>
+<h4 id="service"><a class="header-anchor" href="https://firemint.github.io/privacy/#service">#</a> Service</h4>
+<p>The service provided by this Application as described in the relative terms (if available) and on this site/application.</p>
+<h4 id="european-union-or-eu"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#european-union-or-eu">#</a> European Union (or EU)</h4>
+<p>Unless otherwise specified, all references made within this document to the European Union include all current member states to the European Union and the European Economic Area.</p>
+<h4 id="cookies"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#cookies">#</a> Cookies</h4>
+<p>Small piece of data stored in the User's device.</p>
+<h4 id="legal-information"><a class="header-anchor" href="https://firemint.github.io/bep20-generator-terms/privacy.html/#legal-information">#</a> Legal information</h4>
+<p>This privacy statement has been prepared based on provisions of multiple legislations, including Art. 13/14 of Regulation (EU) 2016/679 (General Data Protection Regulation).</p>
+<p>This privacy policy relates solely to this Application, if not stated otherwise within this document.</p>
+</div>
+<footer class="page-edit"></footer></div>
+<div class="global-ui">&nbsp;</div>
+</div>
+      
+  </body>
+</html> 
